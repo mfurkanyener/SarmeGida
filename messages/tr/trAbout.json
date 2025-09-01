@@ -1,0 +1,22 @@
+{
+  "about": {
+    "founder": {
+    "title": "Kurucunun Hikayesi",
+    "imageAlt": "Birlikte el ele veren kadınların üstten görünümü",
+    "p1": "10 yılı aşkın süredir Bornova ve çevresinde perakende satış yapan bir aile işletmesi olarak yola çıktık...",
+    "p2": "Ve 2022 yılında, kurucularımızdan Ece Samur’un öncülüğünde Ege'nin en büyük fabrikalarından birini açarak...",
+    "p3": "Bugün en büyük hedefimiz; Türkiye’nin dört bir yanına eşsiz lezzetlerimizi ulaştırırken...",
+    "p4": "İzmir içi aynı gün ücretsiz sevkiyat hizmetimiz sayesinde müşterilerimize hızlı ve güvenli ulaştırırken..."
+  },
+    "visionMission": {
+      "vision": {
+        "title": "Vizyon",
+        "body": "Hijyen, kalite ve güven ilkelerini merkeze alarak; üretimden teslimata kadar her aşamada titizlikle çalışmak, müşterilerimize gönül rahatlığıyla tüketebilecekleri lezzetler sunmak."
+      },
+      "mission": {
+        "title": "Misyon",
+        "body": "Türkiye’nin dört bir yanında tanınan ve tercih edilen güvenilir bir gıda markası olmak."
+      }
+    }
+  }
+}

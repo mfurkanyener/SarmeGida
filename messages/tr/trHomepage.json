@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "brand": "SARMEZ",
+    "alt": "SarMez logosu",
+    "about": "Hikayemiz",
+    "flavors": "Lezzetlerimiz",
+    "contact": "Bize Yazın",
+    "recipe": "Lezzet Reçetesi"
+  },
+  "hero": {
+    "title": "Küllerinden Doğan Lezzet",
+    "subtitle": "Ege’nin bereketi ve özenle hazırlanmış tarifler",
+    "cta": "Şimdi Keşfet"
+  },
+  "featured": {
+    "title": "Öne Çıkan Lezzetlerimiz",
+    "product1": {
+      "title": "Yaprak Sarma",
+      "desc": "Geleneksel tarifle hazırlanmış taptaze sarma"
+    },
+    "product2": {
+      "title": "Çiğ Köfte",
+      "desc": "Sağlıklı ve nefis çiğ köfte"
+    },
+    "product3": {
+      "title": "Meze Çeşitleri",
+      "desc": "Ege’nin taptaze mezeleri sofranızda"
+    }
+  },
+  "aboutIntro": {
+    "title": "Geleneksel Tariflerle Sofranıza Lezzet Katıyoruz",
+    "subtitle": "SarMez, yöresel tarifleri modern üretim standartlarıyla hazırlayan yerel bir lezzet atölyesidir. Restoranlara, marketlere ve evlere güvenle teslim.",
+    "card1": {
+      "title": "Lezzetin Yolculuğu",
+      "text": "Ege'nin bereketinden doğan SarMez, ev usulü tarifleri modern üretimle buluşturuyor. Hijyen, kalite ve gıda güvenliği ilkelerimizle sarmadan mezeye, çiğ köfteden daha fazlasına uzanan bir lezzet yolculuğuna davetlisiniz."
+    },
+    "card2": {
+      "title": "Kadın Gücüyle Üretim",
+      "text": "SarMez olarak, üretimimizin kalbinde kadın emeği var. İstihdamın %70’ini kadınların oluşturduğu ekibimizle, lezzeti emek ve özenle buluşturuyoruz."
+    },
+    "cta": "Daha Fazla Oku"
+  },
+  "flavors": {
+    "title": "LEZZETLER",
+    "sarma": {
+      "heading": "Sarma",
+      "alt": "Yaprak sarma tabağı",
+      "body": "Yaprak sarma, Türk mutfağının incisi ve zanaatkârlığın bir simgesidir. Zarifçe hazırlanan incecik yapraklar, içine konan lezzetli dolgu ile buluşur ve muhteşem bir lezzet şöleni oluşturur. Türkiye'de tek olan kendi makinamızda seri üretim yaptığımız yaprak sarmalarımız, lezzet ve estetiği bir araya getiriyor. Geleneksel tariflerimizle özenle hazırladığımız yaprak sarmalarımız, sizleri lezzet dolu bir Ege yolculuğuna davet ediyor."
+    },
+    "cigkofte": {
+      "heading": "Çiğ Köfte",
+      "alt": "Çiğ köfte tabağı",
+      "body": "Çiğ köfte, Türk mutfağının eşsiz lezzetlerinden biridir. Bu eşsiz tadı en saf ve doğal hâliyle sunmaktan gurur duyuyoruz. Tamamen doğal ve organik ürünlerle imalatını gerçekleştirdiğimiz çiğ köftelerimizde sağlığınız ve lezzetiniz ön plandadır. Hijyen ve tazelik konusunda öncelikli bir deneyim denince akla SarMez gelir. Geleneksel tariflerle gıda mühendislerimiz tarafından özenle kontrol edilen çiğ köftelerimiz, lezzet arayan herkesi bekliyor."
+    }
+  },
+  "sustainability": {
+    "title": "SÜRDÜRÜLEBİLİRLİK",
+    "subtitle": "Lezzetin ve Doğallığın Geleceği",
+    "intro": {
+      "title": "Doğadan Sofranıza, Geleceğe İz Bırakmadan",
+      "body": "SarMez olarak, mutfağımızda kullandığımız her malzemenin doğallığına ve tazeliğine özen gösteriyoruz..."
+    },
+    "waste": {
+      "alt": "Traktör ikonu",
+      "title": "Atık ve İsrafın Önlenmesi",
+      "body": "Üretim sürecimizde atıkları en aza indirmek için planlama yapıyoruz..."
+    },
+    "local": {
+      "alt": "Yaprak çelengi ikonu",
+      "title": "Yerel Üretici Desteği",
+      "body": "Mevsiminde toplanan sebzeler, doğal baharatlar ve yöresel hammaddelerle yerel üreticiyi destekliyoruz..."
+    },
+    "ops": {
+      "alt": "Kum saati ikonu",
+      "title": "Üretimden Teslimata Güven",
+      "body": "Tarladan sofranıza uzanan süreçte depolama ve lojistikte modern teknolojiler, güvenilir operasyon yönetimi..."
+    },
+    "packaging": {
+      "alt": "Kutu ikonu",
+      "title": "Doğal ve Geri Dönüştürülebilir Ambalaj",
+      "body": "Gıda dostu ve geri dönüştürülebilir ambalajlarla doğanın dengesini koruyoruz."
+    }
+  },
+  "testimonials": {
+    "title": "BİZİ TERCİH EDENLER",
+    "subtitle": "Bizimle yol alanların deneyimlerini keşfedin",
+    "pagination": "Yorumlar arasında gezinme",
+    "items": [
+      {
+        "quote": "Sofraya koyar koymaz bitti. Tazelik ve tat tam yerinde.",
+        "author": "Furkan Y.",
+        "role": "Yerel Müşteri"
+      },
+      {
+        "quote": "Sarmanın lezzeti çocukluğumu hatırlattı; kargo da çok hızlıydı.",
+        "author": "Zeynep A.",
+        "role": "Ev Kullanıcısı"
+      },
+      {
+        "quote": "Toplantı ikramlarında favorimiz oldu, herkes tarif sordu.",
+        "author": "Mert K.",
+        "role": "Kurumsal Müşteri"
+      }
+    ]
+  }
+}

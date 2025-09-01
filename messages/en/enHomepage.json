@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "brand": "SARMEZ",
+    "alt": "SarMez logo",
+    "about": "Our Story",
+    "flavors": "Our Flavors",
+    "contact": "Contact Us",
+    "recipe": "Flavor Recipe"
+  },
+  "hero": {
+    "title": "Flavor Born from the Ashes",
+    "subtitle": "The abundance of the Aegean and carefully prepared recipes",
+    "cta": "Discover Now"
+  },
+  "featured": {
+    "title": "Our Featured Flavors",
+    "product1": {
+      "title": "Stuffed Vine Leaves",
+      "desc": "Freshly prepared sarma with a traditional recipe"
+    },
+    "product2": {
+      "title": "Çiğ Köfte",
+      "desc": "Healthy and delicious raw köfte"
+    },
+    "product3": {
+      "title": "Meze Varieties",
+      "desc": "The freshest mezes of the Aegean on your table"
+    }
+  },
+  "aboutIntro": {
+    "title": "We Add Flavor to Your Table with Traditional Recipes",
+    "subtitle": "SarMez is a local flavor workshop that prepares regional recipes with modern production standards. Delivered safely to restaurants, markets, and homes.",
+    "card1": {
+      "title": "Journey of Flavor",
+      "text": "Born from the abundance of the Aegean, SarMez combines homemade recipes with modern production. With our principles of hygiene, quality, and food safety, we invite you to a flavor journey from sarma to meze, from çiğ köfte to much more."
+    },
+    "card2": {
+      "title": "Production with Women's Power",
+      "text": "At SarMez, the heart of our production is women's labor. With our team, 70% of whom are women, we bring flavor together with dedication and care."
+    },
+    "cta": "Read More"
+  },
+  "flavors": {
+    "title": "FLAVORS",
+    "sarma": {
+      "heading": "Stuffed Vine Leaves",
+      "alt": "Plate of stuffed vine leaves",
+      "body": "Stuffed vine leaves are a gem of Turkish cuisine and a symbol of craftsmanship. Delicately prepared thin vine leaves meet a delicious filling to create a magnificent feast of flavors. Our stuffed vine leaves, uniquely produced in our own facility with serial production in Turkey, bring flavor and aesthetics together. With our carefully prepared traditional recipes, we invite you to a delicious Aegean journey."
+    },
+    "cigkofte": {
+      "heading": "Çiğ Köfte",
+      "alt": "Plate of raw köfte",
+      "body": "Çiğ köfte is one of the unique tastes of Turkish cuisine. We are proud to present this unique flavor in its purest and most natural form. Produced entirely with natural and organic ingredients, our çiğ köfte prioritizes your health and taste. When it comes to hygiene and freshness, SarMez comes to mind. With our traditional recipes carefully inspected by our food engineers, our çiğ köfte awaits everyone in search of flavor."
+    }
+  },
+  "sustainability": {
+    "title": "SUSTAINABILITY",
+    "subtitle": "The Future of Flavor and Naturalness",
+    "intro": {
+      "title": "From Nature to Your Table, Without Leaving a Trace",
+      "body": "At SarMez, we take care to ensure the naturalness and freshness of every ingredient we use in our kitchen..."
+    },
+    "waste": {
+      "alt": "Tractor icon",
+      "title": "Preventing Waste and Loss",
+      "body": "We plan our production process to minimize waste..."
+    },
+    "local": {
+      "alt": "Laurel wreath icon",
+      "title": "Support for Local Producers",
+      "body": "We support local producers with seasonal vegetables, natural spices, and regional ingredients..."
+    },
+    "ops": {
+      "alt": "Hourglass icon",
+      "title": "Trust from Production to Delivery",
+      "body": "From the field to your table, modern technologies in storage and logistics, reliable operations management..."
+    },
+    "packaging": {
+      "alt": "Box icon",
+      "title": "Natural and Recyclable Packaging",
+      "body": "We protect nature’s balance with food-friendly and recyclable packaging."
+    }
+  },
+  "testimonials": {
+    "title": "WHAT OUR CUSTOMERS SAY",
+    "subtitle": "Discover the experiences of those who journey with us",
+    "pagination": "Browse through testimonials",
+    "items": [
+      {
+        "quote": "It was gone as soon as it hit the table. Freshness and taste were just right.",
+        "author": "Furkan Y.",
+        "role": "Local Customer"
+      },
+      {
+        "quote": "The taste of the sarma reminded me of my childhood; delivery was also very fast.",
+        "author": "Zeynep A.",
+        "role": "Home User"
+      },
+      {
+        "quote": "It became our favorite for meeting treats, everyone asked for the recipe.",
+        "author": "Mert K.",
+        "role": "Corporate Customer"
+      }
+    ]
+  }
+}

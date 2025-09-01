@@ -1,0 +1,22 @@
+{
+  "about": {
+  "founder": {
+    "title": "The Founder’s Story",
+    "imageAlt": "Top view of women joining hands together",
+    "p1": "We started out as a family business serving retail customers in and around Bornova...",
+    "p2": "In 2022, led by our founder Ece Samur, we opened one of the largest facilities in the Aegean region...",
+    "p3": "Today, our biggest goal is to deliver our unique flavors across Turkey while empowering more women...",
+    "p4": "With our same-day free delivery service within İzmir, we reach our customers quickly and reliably..."
+  },
+    "visionMission": {
+      "vision": {
+        "title": "Vision",
+        "body": "To place hygiene, quality and trust at the core; work meticulously at every step from production to delivery, and offer flavors our customers can enjoy with complete peace of mind."
+      },
+      "mission": {
+        "title": "Mission",
+        "body": "To become a trusted food brand that is recognized and preferred across Turkey."
+      }
+    }
+  }
+}

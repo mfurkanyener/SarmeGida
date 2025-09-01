@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+/* (isteğe bağlı birkaç yardımcı) */
+@layer utilities {
+    .min-h-card { min-height: 220px; }      /* kart min yüksekliği hedefi */
+    .gap-card   { gap: var(--sp-16); }      /* kart iç gap */
+    .px-card    { padding-inline: var(--sp-24); }
+    .py-card    { padding-block: var(--sp-24); }
+    @media (min-width: 768px) {
+        .px-card { padding-inline: var(--sp-32); }
+        .py-card { padding-block: var(--sp-32); }
+    }
+}
