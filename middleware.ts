@@ -8,5 +8,5 @@ export default createMiddleware({
 
 export const config = {
     // api ve statikleri dışla; tüm diğer isteklerde çalışsın
-    matcher: ['/((?!api|_next|.*\\..*).*)']
+    matcher: ['/((?!api|_next|admin|.*\\..*).*)']
 };
