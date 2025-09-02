@@ -23,7 +23,7 @@ export default function Testimonials() {
     const total = items.length;
 
     const go = useCallback((n: number) => {
-        setIdx((p) => (n + total) % total);
+        setIdx(() => (n + total) % total);
     }, [total]);
 
     // ← → ile gezinme

@@ -16,10 +16,6 @@ const headingFont = Playfair_Display({
     variable: '--font-heading'
 });
 
-export const metadata = {
-    title: 'SarMez',
-    description: 'SarMez resmi web sitesi'
-};
 
 export default async function RootLayout({children}: {children: React.ReactNode}) {
     const locale = await getLocale();

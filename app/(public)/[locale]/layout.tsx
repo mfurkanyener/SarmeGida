@@ -1,32 +1,29 @@
 // app/(public)/[locale]/layout.tsx
+import type {ReactNode} from 'react';
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, setRequestLocale} from 'next-intl/server';
-import type {ReactNode} from 'react';
 import Footer from "@components/Footer";
-
-type Locale = 'tr' | 'en';
 
 export function generateStaticParams() {
     return [{locale: 'tr'}, {locale: 'en'}];
 }
 
-type Props = {
+// Hem Promise hem sync params'ı karşılayan pragmatik tip
+type AnyLayoutProps = {
     children: ReactNode;
-    params: { locale: Locale }; // <<<< Promise değil
+    params: Promise<{locale: string}> | {locale: string};
 };
 
-export default async function LocaleLayout({children, params}: Props) {
-    const {locale} = params;
+export default async function LocaleLayout({children, params}: AnyLayoutProps) {
+    const resolved = params instanceof Promise ? await params : params;
+    const raw = resolved?.locale ?? 'tr';
+    const safe = raw === 'tr' || raw === 'en' ? raw : 'tr';
 
-    // next-intl kurulumları
-    setRequestLocale(locale);
-    const messages = await getMessages({locale});
+    setRequestLocale(safe);
+    const messages = await getMessages({locale: safe});
 
-    // (İstersen burada Navbar/Footer koşulunu ele alırsın;
-    // headers().get(...) gibi şeylere gerek yok, sayfalarda
-    // path tabanlı koşula ihtiyaç varsa client tarafında bakarız.)
     return (
-        <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider locale={safe} messages={messages}>
             {/* Sayfa içerikleri */}
             <main className="min-h-[60vh]">{children}</main>
 

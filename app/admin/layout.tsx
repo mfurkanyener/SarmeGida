@@ -1,8 +1,5 @@
 // app/admin/layout.tsx
-export const metadata = {
-    title: 'Admin | SarMez',
-    description: 'Admin panel shell',
-};
+
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
     return (
