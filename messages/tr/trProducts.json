@@ -1,1 +1,8 @@
-{ "homepage": { "hero": { "title": "...", "subtitle": "..." } } }
+{
+  "products": {
+    "hero": {
+      "title": "LEZZETLERİMİZ",
+      "subtitle": "Doğallığı, hijyeni ve kaliteyi merkeze alarak hazırladığımız ürünler; ev sofralarınızdan özel davetlerinize, sevdiklerinizle paylaşacağınız en güvenilir tatları sunar."
+    }
+  }
+}

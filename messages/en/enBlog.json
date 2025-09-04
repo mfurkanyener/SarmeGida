@@ -1,1 +1,8 @@
-{ "homepage": { "hero": { "title": "...", "subtitle": "..." } } }
+{
+  "blog": {
+    "hero": {
+      "title": "LEZZET REÇETESİ",
+      "subtitle": "SarMez’in mutfağından sofranıza uzanan tarifler, hikâyeler ve ilham veren lezzet yolculukları."
+    }
+  }
+}

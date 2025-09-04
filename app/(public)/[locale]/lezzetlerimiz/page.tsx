@@ -1,7 +1,10 @@
+// app/(public)/[locale]/lezzetlerimiz/page.tsx
+import {useTranslations} from 'next-intl';
+import HeaderShell from '@layout/HeaderShell';
+import GenericHero from '@/app/components/hero/GenericHero';
 import ProductsGrid from '@/app/sections/products/ProductsGrid';
-import Navbar from '@/app/components/layout/Navbar'
 
-export default function ProductsPage() {
+export default function Page() {
     const products = [
         {
             title: 'Yaprak Sarması',
@@ -34,13 +37,17 @@ export default function ProductsPage() {
             href: '/lezzetlerimiz/sambali'
         }
     ];
+    const t = useTranslations('products.hero');
+    return (
+        <>
+            <HeaderShell height={420}>
+                <GenericHero
+                    title={t('title')}                  // "LEZZETLERİMİZ"
+                    subtitle={t('subtitle')}            // kısa açıklama
+                    align="center"
+                />
+            </HeaderShell>
 
-    return(
-        <div>
-    <Navbar/>
-    <ProductsGrid items={products} />;
-        </div>
+            <ProductsGrid items={products} />        </>
     );
-
-
 }

@@ -1,5 +1,9 @@
 {
   "contact": {
+    "hero": {
+      "title": "CONTACT",
+      "subtitle": "You can always reach us for questions, suggestions or orders. Our team will get back to you as soon as possible."
+    },
     "contactTitle": "Contact",
     "addressTitle": "Address",
     "hoursTitle": "Working Hours",

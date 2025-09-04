@@ -1,5 +1,9 @@
 {
   "contact": {
+    "hero": {
+      "title": "İLETİŞİM",
+      "subtitle": "Sorularınız, önerileriniz ya da siparişleriniz için bize her zaman ulaşabilirsiniz. Ekibimiz en kısa sürede size dönüş yapacaktır."
+    },
     "contactTitle": "İletişim",
     "addressTitle": "Adres",
     "hoursTitle": "Çalışma Saatleri",
