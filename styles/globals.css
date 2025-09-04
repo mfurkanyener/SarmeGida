@@ -1,6 +1,5 @@
 /* ------------- DESIGN TOKENS ------------- */
 @import "tailwindcss";
-@import "../styles/fonts.css";
 :root {
   /* içerik alanı genişliği */
   --container-max: 1200px;
