@@ -40,25 +40,19 @@ export default function Testimonials() {
 
     return (
         <section aria-labelledby="testimonials-heading" className="section-y">
-            <div className="container-inline text-center max-w-5xl mx-auto">
-                <h2
-                    id="testimonials-heading"
-                    className="font-heading text-[clamp(28px,4vw,48px)] text-[color:var(--olive-700)]"
-                >
+            <div className="mx-auto max-w-5xl px-4 text-center">
+                <h2 id="testimonials-heading"
+                    className="font-heading text-[clamp(28px,4vw,48px)] text-[color:var(--olive-700)]">
                     {t('title')}
                 </h2>
                 <p className="mt-2 italic text-[color:var(--muted)] text-[clamp(16px,2vw,24px)]">
                     {t('subtitle')}
                 </p>
 
-                {/* Alıntı */}
                 <blockquote className="mt-10 text-[clamp(20px,2.8vw,40px)] leading-snug">
-          <span className="inline-block mx-auto max-w-4xl">
-            “{active.quote}”
-          </span>
+                    <span className="block mx-auto max-w-4xl">“{active.quote}”</span>
                 </blockquote>
 
-                {/* Yazar */}
                 <div className="mt-6">
                     <div className="font-heading text-[clamp(18px,2vw,28px)] text-[color:var(--olive-700)]">
                         {active.author}
@@ -68,8 +62,8 @@ export default function Testimonials() {
                     </div>
                 </div>
 
-                {/* Dots */}
-                <div className="mt-6 flex items-center justify-center gap-3" role="tablist" aria-label={t('pagination')}>
+                <div className="mt-6 flex items-center justify-center gap-3" role="tablist"
+                     aria-label={t('pagination')}>
                     {items.map((_, i) => {
                         const selected = i === idx;
                         return (
@@ -78,8 +72,11 @@ export default function Testimonials() {
                                 role="tab"
                                 aria-selected={selected}
                                 aria-controls={`testimonial-panel-${i}`}
-                                className={`h-3 w-3 rounded-full transition
-                  ${selected ? 'bg-[color:var(--text)]/80 scale-100' : 'bg-[color:var(--muted)]/30 scale-95 hover:bg-[color:var(--muted)]/60'}`}
+                                className={`h-3 w-3 rounded-full transition ${
+                                    selected
+                                        ? 'bg-[color:var(--text)]/80 scale-100'
+                                        : 'bg-[color:var(--muted)]/30 scale-95 hover:bg-[color:var(--muted)]/60'
+                                }`}
                                 onClick={() => go(i)}
                             />
                         );

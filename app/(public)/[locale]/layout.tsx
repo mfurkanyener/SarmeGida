@@ -2,7 +2,7 @@
 import type {ReactNode} from 'react';
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, setRequestLocale} from 'next-intl/server';
-import Footer from "@components/Footer";
+import Footer from '@layout/Footer';
 
 export function generateStaticParams() {
     return [{locale: 'tr'}, {locale: 'en'}];
@@ -21,6 +21,7 @@ export default async function LocaleLayout({children, params}: AnyLayoutProps) {
 
     setRequestLocale(safe);
     const messages = await getMessages({locale: safe});
+
 
     return (
         <NextIntlClientProvider locale={safe} messages={messages}>

@@ -20,6 +20,12 @@ const eslintConfig = [
       "next-env.d.ts",
     ],
   },
+  {
+    files: ["**/*.tsx", "**/*.ts"],
+    rules: {
+      "@next/next/no-img-element": "off" // 🔴 <img> etiketi uyarısını kapatır
+    }
+  }
 ];
 
 export default eslintConfig;

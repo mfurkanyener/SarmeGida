@@ -17,6 +17,27 @@
         "title": "Misyon",
         "body": "Türkiye’nin dört bir yanında tanınan ve tercih edilen güvenilir bir gıda markası olmak."
       }
+    },
+    "aboutHighlights": {
+      "imageAlt": "SarMez üretim ve yolculuk görseli",
+      "items": [
+        {
+          "title": "Her Aşamada Güven",
+          "body": "Tarladan sofraya uzanan yolculuğumuzda, tüm süreçler şeffaf ve güvenilir yöntemlerle yürütülür."
+        },
+        {
+          "title": "SarMeZ’in Yolculuğu",
+          "body": "Yılların emeği ve deneyimiyle, bugün her sofrada iz bırakmaya devam ediyoruz."
+        },
+        {
+          "title": "Hijyen ve Gelenek Bir Arada",
+          "body": "Modern üretim standartlarını geleneksel tariflerle birleştiriyoruz."
+        }
+      ]
+    },
+    "certificates": {
+      "title": "SERTİFİKALARIMIZ",
+      "description": "Kalite, hijyen ve güven ilkelerinden ödün vermeden üretim yapıyoruz. Bu anlayışımızın göstergesi olarak sahip olduğumuz ulusal ve uluslararası sertifikalar, SarMez’in lezzetlerinin yalnızca damaklarda değil, güvenle de değer bulduğunu kanıtlıyor."
     }
   }
 }

@@ -1,15 +1,14 @@
-'use client';
+// app/(public)/[locale]/page.tsx  ← DİKKAT: 'use client' YOK
+import HeaderShell from '@layout/HeaderShell';
+import Navbar from '@layout/Navbar';
+import Hero from '@/app/sections/home/Hero';
+import AboutIntro from '@/app/sections/about/AboutIntro';
+import Flovors from '@/app/sections/home/Flavors';
+import Sustainability from '@/app/sections/home/Sustainability';
+import Testimonials from '@/app/sections/home/Testimonials';
 
-import HeaderShell from '@components/HeaderShell';
-import Navbar from '@components/Navbar';
-import Hero from '@components/Hero';
-import AboutIntro from "@components/AboutIntro";
-import Flovors from '@components/Flavors'
-import Sustainability from "@components/Sustainability";
-import Testimonials from "@components/Testimonials";
 
-
-export default function HomePage() {
+export default async function HomePage() {
 
     return (
         <div className="flex flex-col min-h-screen bg-[var(--color-bg)] text-[var(--color-text)]">
@@ -21,8 +20,8 @@ export default function HomePage() {
             <AboutIntro/>
             <Flovors/>
             <Sustainability/>
-            <Testimonials />
-
+            {/* Örnek: posts’u bir client bileşene verebilirsin */}
+            <Testimonials/>
         </div>
     );
 }

@@ -6,21 +6,11 @@ import Image from 'next/image';
 
 export default function Footer() {
     return (
-        <footer className="relative mt-24 text-[color:var(--bg)]">
-            {/* Kavisli üst arka plan */}
-            <div className="relative isolate bg-[#B3835B]">
-                {/* Üstteki kavis */}
-                <svg
-                    aria-hidden
-                    className="absolute -top-28 left-0 w-full h-56 text-[#B3835B]"
-                    viewBox="0 0 1440 320"
-                    preserveAspectRatio="none"
-                >
-                    <path
-                        d="M0,96L80,117.3C160,139,320,181,480,176C640,171,800,117,960,117.3C1120,117,1280,171,1360,197.3L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
-                        fill="currentColor"
-                    />
-                </svg>
+        <footer
+            className="relative bg-no-repeat bg-cover bg-top text-white"
+            style={{backgroundImage: "url('/images/common/footer.png')"}}
+        >
+            <div className="container mx-auto py-12">
 
                 {/* Abone ol bloğu */}
                 <section className="container-inline relative pt-24 pb-10 text-center">
@@ -29,7 +19,7 @@ export default function Footer() {
                     </h2>
                     <p className="mt-3 text-[color:var(--bg)]/90">
                         Sarmez e-bülten aboneliği ile
-                        <br />
+                        <br/>
                         en yeni lezzetlerimizi ilk duyan siz olun!
                     </p>
 
@@ -81,7 +71,7 @@ export default function Footer() {
                             <h3 className="font-heading text-xl mb-2">Adres</h3>
                             <p className="text-sm opacity-90">
                                 10026. Sk. No:2, 35620
-                                <br />
+                                <br/>
                                 Aosb/Çiğli/İzmir, Türkiye
                             </p>
                         </div>
@@ -102,7 +92,8 @@ export default function Footer() {
                             <h4 className="font-heading text-xl mb-3">Hakkımızda</h4>
                             <ul className="space-y-2 opacity-95">
                                 <li><Link href="/tr/hikayemiz" className="hover:underline">Hikayemiz</Link></li>
-                                <li><Link href="/tr/lezzet-recetesi" className="hover:underline">Lezzet Reçetesi</Link></li>
+                                <li><Link href="/tr/lezzet-recetesi" className="hover:underline">Lezzet Reçetesi</Link>
+                                </li>
                                 <li><Link href="/tr/sss" className="hover:underline">Sıkça Sorulan Sorular</Link></li>
                             </ul>
                         </div>
@@ -110,10 +101,13 @@ export default function Footer() {
                         <div>
                             <h4 className="font-heading text-xl mb-3">Lezzetlerimiz</h4>
                             <ul className="space-y-2 opacity-95">
-                                <li><Link href="/tr/lezzetlerimiz/yaprak-sarmasi" className="hover:underline">Yaprak Sarması</Link></li>
-                                <li><Link href="/tr/lezzetlerimiz/cig-kofte" className="hover:underline">Çiğ köfte</Link></li>
+                                <li><Link href="/tr/lezzetlerimiz/yaprak-sarmasi" className="hover:underline">Yaprak
+                                    Sarması</Link></li>
+                                <li><Link href="/tr/lezzetlerimiz/cig-kofte" className="hover:underline">Çiğ
+                                    köfte</Link></li>
                                 <li><Link href="/tr/lezzetlerimiz/meze" className="hover:underline">Meze</Link></li>
-                                <li><Link href="/tr/lezzetlerimiz/kalburabasti" className="hover:underline">Kalburabastı</Link></li>
+                                <li><Link href="/tr/lezzetlerimiz/kalburabasti"
+                                          className="hover:underline">Kalburabastı</Link></li>
                             </ul>
                         </div>
 
@@ -128,10 +122,10 @@ export default function Footer() {
                             <h4 className="font-heading text-xl mb-3">Bizi Takip Edin</h4>
                             <div className="grid grid-cols-4 gap-3 max-w-[180px]">
                                 {[
-                                    { label: 'IG', href: 'https://instagram.com' },
-                                    { label: 'IN', href: 'https://linkedin.com' },
-                                    { label: 'FB', href: 'https://facebook.com' },
-                                    { label: 'TT', href: 'https://tiktok.com' }
+                                    {label: 'IG', href: 'https://instagram.com'},
+                                    {label: 'IN', href: 'https://linkedin.com'},
+                                    {label: 'FB', href: 'https://facebook.com'},
+                                    {label: 'TT', href: 'https://tiktok.com'}
                                 ].map(s => (
                                     <Link
                                         key={s.label}
@@ -150,7 +144,8 @@ export default function Footer() {
 
                 {/* En alt çubuk */}
                 <div className="bg-black/20">
-                    <div className="container-inline flex flex-col gap-3 py-4 text-sm md:flex-row md:items-center md:justify-between">
+                    <div
+                        className="container-inline flex flex-col gap-3 py-4 text-sm md:flex-row md:items-center md:justify-between">
                         <span className="opacity-90">© 2025 SarMez</span>
                         <div className="flex items-center gap-6 opacity-90">
                             <Link href="/tr/gizlilik" className="hover:underline">Gizlilik Politikası</Link>

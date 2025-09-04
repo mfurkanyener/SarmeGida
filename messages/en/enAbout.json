@@ -17,6 +17,27 @@
         "title": "Mission",
         "body": "To become a trusted food brand that is recognized and preferred across Turkey."
       }
+    },
+    "aboutHighlights": {
+      "imageAlt": "SarMez production and journey photo",
+      "items": [
+        {
+          "title": "Trust at Every Stage",
+          "body": "From field to table, every step of our journey is carried out with transparent and reliable methods."
+        },
+        {
+          "title": "SarMeZ’s Journey",
+          "body": "With years of dedication and experience, we continue leaving a mark on every table."
+        },
+        {
+          "title": "Hygiene Meets Tradition",
+          "body": "We blend modern production standards with traditional recipes."
+        }
+      ]
+    },
+    "certificates": {
+      "title": "OUR CERTIFICATES",
+      "description": "We produce without compromising quality, hygiene, and safety principles. As proof of this approach, the national and international certificates we hold demonstrate that SarMez’s flavors are valued not only on taste but also on trust."
     }
   }
 }

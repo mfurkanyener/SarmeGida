@@ -13,17 +13,19 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": ".",                       // Bu satır şart
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@components/*": ["./app/components/*"]
-      // src yoksa bu şekilde olmalı
+      "@layout/*": ["app/components/layout/*"],
+      "@ui/*": ["app/components/ui/*"],
+      "@cards/*": ["app/components/cards/*"],
+      "@sections/*": ["app/sections/*"],
+      "@shared/*": ["app/shared/*"],
+      "@/lib/*": ["lib/*"],
+      "@/lib/supabase/*": ["lib/supabase/*"],
+      "@/types/*": ["types/*"]
     },
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
+    "plugins": [{ "name": "next" }]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]

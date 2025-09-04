@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import {useTranslations, useLocale} from 'next-intl';
-import LanguageSwitch from '@components/LanguageSwitch';
+import LanguageSwitch from '@layout/LanguageSwitch';
 
 export default function Navbar() {
     const t = useTranslations('nav');
