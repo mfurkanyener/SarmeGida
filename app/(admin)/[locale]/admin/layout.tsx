@@ -2,6 +2,7 @@
 import type { ReactNode } from 'react';
 import { redirect } from 'next/navigation';
 import { supabaseServerRead } from '@/lib/supabase/server';
+import AdminNavbar from "@layout/AdminNavbar";
 
 type MaybePromise<T> = T | Promise<T>;
 
@@ -40,5 +41,7 @@ export default async function AdminLayout({
         redirect(`/${locale}/auth/login`);
     }
 
-    return <>{children}</>;
+    return <>
+        <AdminNavbar locale={locale as 'tr' | 'en'} />
+        {children}</>;
 }

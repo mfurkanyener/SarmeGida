@@ -3,8 +3,13 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import {usePathname} from 'next/navigation';
 
 export default function Footer() {
+    // ❗ Yol kontrolü: auth sayfalarında footer'ı gizle
+    const pathname = usePathname() || '/';
+    const hideFooter = /^\/(tr|en)\/auth(?:\/|$)/.test(pathname);
+    if (hideFooter) return null;
     return (
         <footer
             className="relative bg-no-repeat bg-cover bg-top text-white"
