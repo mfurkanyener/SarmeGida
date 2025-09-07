@@ -1,4 +1,4 @@
-import { supabaseServer } from '@/lib/supabase/server';
+import { supabaseServerRead } from '@/lib/supabase/server';
 import Image from 'next/image';
 import Link from 'next/link';
 import {Post} from "@/app/types/cms";
@@ -8,7 +8,7 @@ export default async function RecipeListPage({
                                              }: {
     params: { locale: string };
 }) {
-    const supabase = await supabaseServer();
+    const supabase = await supabaseServerRead();
     const { data: posts, error } = await supabase
         .from('posts')
         .select('*')

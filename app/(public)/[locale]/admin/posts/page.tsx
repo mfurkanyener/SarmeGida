@@ -1,9 +1,9 @@
-import { supabaseServer } from '@/lib/supabase/server';
+import { supabaseServerAction } from '@/lib/supabase/server';
 import Link from 'next/link';
 import {Post} from "@/app/types/cms";
 
 export default async function AdminPostsPage() {
-    const supabase = await supabaseServer();
+    const supabase = await supabaseServerAction();
     const { data: posts } = await supabase
         .from('posts')
         .select('*')

@@ -103,7 +103,7 @@ export default function Navbar({ withSpacer = true }: Props) {
                             />
 
                             <ul className="flex items-center gap-8 text-[color:var(--text)]">
-                                <li><Link href="/iletisim" locale={locale} className="hover:text-[color:var(--olive-700)]">{t('writeUs') ?? t('contact')}</Link></li>
+                                <li><Link href="/iletisim" locale={locale} className="hover:text-[color:var(--olive-700)]">{t('contact') ?? t('contact')}</Link></li>
                                 <li>
                                     <Link
                                         href="/lezzet-recetesi"

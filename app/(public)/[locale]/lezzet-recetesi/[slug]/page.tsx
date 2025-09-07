@@ -1,11 +1,11 @@
-import { supabaseServer } from '@/lib/supabase/server';
+import { supabaseServerRead } from '@/lib/supabase/server';
 
 export default async function RecipeDetailPage({
                                                    params: { locale, slug }
                                                }: {
     params: { locale: string; slug: string };
 }) {
-    const supabase = await supabaseServer();
+    const supabase = await supabaseServerRead();
     const { data: post, error } = await supabase
         .from('posts')
         .select('*')

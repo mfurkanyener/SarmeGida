@@ -1,6 +1,7 @@
+// middleware.ts
 import { NextResponse, type NextRequest } from 'next/server';
 import createIntlMiddleware from 'next-intl/middleware';
-import { createServerClient } from '@supabase/ssr';
+import { createServerClient, type CookieOptions } from '@supabase/ssr';
 
 const intl = createIntlMiddleware({
     locales: ['tr', 'en'],
@@ -12,20 +13,23 @@ export const config = {
 };
 
 export async function middleware(req: NextRequest) {
-    const { pathname } = new URL(req.url);
+    const { pathname, search } = req.nextUrl;
 
-    // Statik ve api'leri es geç
-    if (
-        pathname.startsWith('/api') ||
-        pathname.startsWith('/_next') ||
-        /\.[\w]+$/.test(pathname)
-    ) {
+    // statik & api geç
+    if (pathname.startsWith('/api') || pathname.startsWith('/_next') || /\.[\w]+$/.test(pathname)) {
         return NextResponse.next();
     }
 
-    // Admin path'i (locale dahil)
-    if (pathname.match(/^\/(tr|en)\/admin/)) {
-        const res = NextResponse.next();
+    // i18n sonucu (rewrite/redirect’leri gözetelim)
+    const intlRes = intl(req);
+
+    // “/admin” ve “/:locale/admin” eşleştir
+    const isAdminPath = /^\/(?:(?:tr|en)\/)?admin(?:\/|$)/.test(pathname);
+    const isAuthPath = /^\/(?:(?:tr|en)\/)?auth(?:\/|$)/.test(pathname);
+
+    if (isAdminPath && !isAuthPath) {
+        // intlRes bir NextResponse ise onu temel al, değilse yeni response
+        const base = intlRes instanceof NextResponse ? intlRes : NextResponse.next();
 
         const supabase = createServerClient(
             process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -33,33 +37,32 @@ export async function middleware(req: NextRequest) {
             {
                 cookies: {
                     get: (name: string) => req.cookies.get(name)?.value,
-                    set: (name: string, value: string, options) => {
-                        res.cookies.set({ name, value, ...options });
+                    set: (name: string, value: string, options?: CookieOptions) => {
+                        base.cookies.set({ name, value, ...(options ?? {}) });
                     },
-                    remove: (name: string, options) => {
-                        res.cookies.set({ name, value: '', ...options });
+                    remove: (name: string, options?: CookieOptions) => {
+                        base.cookies.set({ name, value: '', ...(options ?? {}), maxAge: 0 });
                     },
                 },
             }
         );
 
-        const {
-            data: { user },
-        } = await supabase.auth.getUser();
+        const { data: { user } } = await supabase.auth.getUser();
 
-        const isAdmin =
-            user &&
-            (user.app_metadata?.role === 'admin' ||
-                user.user_metadata?.role === 'admin');
-
-        if (!isAdmin && !pathname.startsWith('/auth')) {
-            const loginUrl = new URL('/auth/login', req.url);
-            return NextResponse.redirect(loginUrl);
+        // 🔑 Middleware sadece “loginli mi?” kontrol ediyor
+        if (!user) {
+            const url = req.nextUrl.clone();
+            const seg = url.pathname.split('/')[1];
+            const hasLocale = seg === 'tr' || seg === 'en';
+            url.pathname = hasLocale ? `/${seg}/auth/login` : '/auth/login';
+            // geri dönüş için redirect paramını ekle
+            url.search = `?redirect=${encodeURIComponent(pathname + search)}`;
+            return NextResponse.redirect(url);
         }
 
-        return res;
+        return base; // oturum var → geç
     }
 
-    // Public rotalar
-    return intl(req);
+    // public rotalar
+    return intlRes;
 }

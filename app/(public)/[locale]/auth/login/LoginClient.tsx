@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import { supabaseBrowser } from '@/lib/supabase/client';
@@ -16,13 +16,6 @@ export default function LoginClient() {
     const [err, setErr] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
 
-    // Zaten girişliyse login sayfasında tutma
-    useEffect(() => {
-        supabaseBrowser.auth.getUser().then(({ data: { user } }) => {
-            if (user) router.replace(redirectTo);
-        });
-    }, [router, redirectTo]);
-
     async function onSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
         setLoading(true);
@@ -37,8 +30,14 @@ export default function LoginClient() {
             return;
         }
 
-        // dev’de 1 tick gecikme olabiliyor — user’i doğrula
-        await supabaseBrowser.auth.getUser();
+        // 🔁 Client oturumunu SSR cookie’ye senkronla
+        const { data: { session } } = await supabaseBrowser.auth.getSession();
+        await fetch('/api/auth', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ event: 'SIGNED_IN', session }),
+        });
+
         router.replace(redirectTo);
     }
 
