@@ -6,7 +6,7 @@ const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
 /** RSC / layout / page: sadece okuma, cookie yazmaz */
 export async function supabaseServerRead() {
-    const cookieStore = await cookies();
+    const cookieStore = await cookies(); // Next 15: Promise
 
     return createServerClient(url, key, {
         cookies: {
@@ -14,10 +14,10 @@ export async function supabaseServerRead() {
                 return cookieStore.get(name)?.value;
             },
             set() {
-                /* no-op in RSC */
+                /* RSC ortamında cookie yazılmaz (no-op) */
             },
             remove() {
-                /* no-op in RSC */
+                /* RSC ortamında cookie silinmez (no-op) */
             },
         },
     });

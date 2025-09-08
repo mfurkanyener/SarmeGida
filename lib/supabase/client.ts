@@ -1,8 +1,7 @@
 'use client';
 
 import { createClient } from '@supabase/supabase-js';
-
-
+// (opsiyonel) tip desteği için: import type { Database } from './types';
 
 export const supabaseBrowser = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -16,6 +15,5 @@ export const supabaseBrowser = createClient(
     }
 );
 
-
-// Geriye dönük uyumluluk için alias
+// Geriye dönük alias
 export const supabaseClient = supabaseBrowser;

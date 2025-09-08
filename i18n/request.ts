@@ -5,7 +5,7 @@ import {getRequestConfig, type GetRequestConfigParams} from 'next-intl/server';
 import trCommon from '../messages/tr/trCommon.json';
 import trHomepage from '../messages/tr/trHomepage.json';
 import trAbout from '../messages/tr/trAbout.json';
-import trProducts from '../messages/tr/trProducts.json';
+import trProducts from '../messages/tr/trProduct.json';
 import trBlog from '../messages/tr/trBlog.json';
 import trContact from '../messages/tr/trContact.json';
 
@@ -13,7 +13,8 @@ import trContact from '../messages/tr/trContact.json';
 import enCommon from '../messages/en/enCommon.json';
 import enHomepage from '../messages/en/enHomepage.json';
 import enAbout from '../messages/en/enAbout.json';
-import enProducts from '../messages/en/enProducts.json';
+import enProduct from '../messages/en/enProduct.json';
+import trProduct from '../messages/tr/trProduct.json';
 import enBlog from '../messages/en/enBlog.json';
 import enContact from '../messages/en/enContact.json';
 
@@ -28,8 +29,8 @@ export default getRequestConfig(async ({locale}: GetRequestConfigParams) => {
 
     const messages =
         safe === 'tr'
-            ? { ...trCommon, ...trHomepage, ...trAbout, ...trProducts, ...trBlog, ...trContact }
-            : { ...enCommon, ...enHomepage, ...enAbout, ...enProducts, ...enBlog, ...enContact };
+            ? { ...trCommon, ...trHomepage, ...trAbout, ...trProduct, ...trBlog, ...trContact }
+            : { ...enCommon, ...enHomepage, ...enAbout, ...enProduct, ...enBlog, ...enContact };
 
     return { locale: safe, messages };
 });
