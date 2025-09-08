@@ -2,12 +2,8 @@
 import {NextResponse} from 'next/server';
 import {supabaseServerAction} from '@/lib/supabase/server';
 
-
-
 export async function POST(req: Request) {
-
-    const supabase = await supabaseServerAction();
-    const body = await req.json();
-
-    return NextResponse.json({ok: true});
+    const _supabase = await supabaseServerAction();
+    const _body = await req.json();
+    return NextResponse.json({ ok: true });
 }

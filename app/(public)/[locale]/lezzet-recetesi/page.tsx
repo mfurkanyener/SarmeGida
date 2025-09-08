@@ -1,65 +1,43 @@
-import { supabaseServerRead } from '@/lib/supabase/server';
-import Image from 'next/image';
-import Link from 'next/link';
-import {Post} from "@/app/types/cms";
+import {getPosts} from '@/lib/blog/queries';
+import {getTranslations} from 'next-intl/server';
+import GenericHero from "@/app/components/hero/GenericHero";
+import HeaderShell from "@layout/HeaderShell";
 
-export default async function RecipeListPage({
-                                                 params: { locale }
-                                             }: {
-    params: { locale: string };
-}) {
-    const supabase = await supabaseServerRead();
-    const { data: posts, error } = await supabase
-        .from('posts')
-        .select('*')
-        .eq('locale', locale) // TR için tr, EN için en
-        .order('created_at', { ascending: false });
+type PageProps = { params: { locale: string } | Promise<{ locale: string }> };
 
-    if (error) {
-        return <div className="container-inline py-10">Hata: {error.message}</div>;
-    }
+export default async function BlogListPage({ params }: PageProps) {
+    const { locale } = await Promise.resolve(params);
+    const loc = (locale === 'en') ? 'en' : 'tr';
+
+    const t = await getTranslations({ locale: loc, namespace: 'blog.hero' });
+    const posts = await getPosts(loc);
 
     return (
-        <main className="container-inline py-16 space-y-12">
-            <h1 className="text-3xl font-bold mb-10">Lezzet Reçetesi</h1>
+        <>
 
-            <div className="flex flex-col gap-16">
-                {posts?.map((post: Post, idx: number) => (
-                    <div
-                        key={post.id}
-                        className={`flex flex-col md:flex-row items-center gap-8 ${
-                            idx % 2 === 1 ? 'md:flex-row-reverse' : ''
-                        }`}
-                    >
-                        {/* Görsel */}
-                        {post.cover_url ? (
-                            <Image
-                                src={post.cover_url}
-                                alt={post.title}
-                                width={500}
-                                height={300}
-                                className="rounded-lg shadow-md object-cover"
-                            />
-                        ) : (
-                            <div className="w-[500px] h-[300px] bg-gray-200 flex items-center justify-center rounded-lg">
-                                Görsel Yok
+            <HeaderShell height={420}>
+                <GenericHero title={t('title')} subtitle={t('subtitle')} />
+            </HeaderShell>
+        <main className="container-inline py-10" style={{maxWidth:'var(--container-max)'}}>
+
+            <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {posts.map(p => (
+                    <li key={p.slug} className="rounded-2xl border bg-white overflow-hidden" style={{boxShadow:'var(--shadow-card)'}}>
+                        <a href={`/${loc}/lezzet-recetesi/${p.slug}`} className="block">
+                            {p.cover_url ? (
+                                <img src={p.cover_url} alt={p.title} className="w-full aspect-[4/3] object-cover" loading="lazy"/>
+                            ) : (
+                                <div className="w-full aspect-[4/3] bg-[color:var(--card-bg)] grid place-items-center text-[color:var(--muted)]">Görsel yok</div>
+                            )}
+                            <div className="p-4">
+                                <h3 className="font-semibold text-lg">{p.title}</h3>
+                                {p.excerpt && <p className="mt-1 text-[color:var(--muted)]">{p.excerpt}</p>}
                             </div>
-                        )}
-
-                        {/* İçerik */}
-                        <div className="flex-1">
-                            <h2 className="text-2xl font-semibold mb-3">{post.title}</h2>
-                            <p className="text-gray-600 mb-4">{post.excerpt}</p>
-                            <Link
-                                href={`/${locale}/lezzet-recetesi/${post.slug}`}
-                                className="inline-block px-5 py-2 rounded bg-[color:var(--olive-700)] text-white hover:bg-[color:var(--olive-600)] transition"
-                            >
-                                Keşfet
-                            </Link>
-                        </div>
-                    </div>
+                        </a>
+                    </li>
                 ))}
-            </div>
+            </ul>
         </main>
+        </>
     );
 }
