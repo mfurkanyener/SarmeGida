@@ -1,0 +1,42 @@
+
+{
+  "privacy": {
+    "hero": {
+      "title": "Privacy Policy",
+      "subtitle": "How we collect, use and protect your information."
+    }
+  },
+  "updatedLabel": "Last Updated:",
+  "intro": "At SarMez Gıda, we value the privacy of our visitors. This Policy explains what information we collect, how we use it, and your rights.",
+  "sections": [
+    {
+      "heading": "1. Information We Collect",
+      "list": [
+        "Name and email address via contact forms/newsletter signups.",
+        "Technical data (IP, browser, device details) – for security and analytics only."
+      ]
+    },
+    {
+      "heading": "2. Use of Information",
+      "list": [
+        "Responding to your inquiries",
+        "Sending newsletters/updates with your consent",
+        "Improving site security and user experience"
+      ]
+    },
+    {
+      "heading": "3. Sharing",
+      "paragraph": "We do not sell personal data. We may share it only when required by law or with service providers (e.g., email delivery)."
+    },
+    {
+      "heading": "4. Cookies",
+      "paragraph": "We may use cookies to improve your experience. You can manage cookie preferences in your browser."
+    },
+    {
+      "heading": "5. Your Rights",
+      "paragraph": "You have the right to access, correct, or delete your data and to object to marketing communications."
+    }
+  ],
+  "contactPrefix": "For requests, contact:",
+  "email": "sarmezit@gmail.com"
+}

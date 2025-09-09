@@ -4,8 +4,35 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import {usePathname} from 'next/navigation';
+import {SubscribeBar} from "@sections/home";
 
 export default function Footer() {
+    const socials = [
+        {
+            label: "Instagram",
+            href: "https://www.instagram.com/sarmezworkshop/",
+            src: "/images/icons/igIcon.png",
+            alt: "Instagram Icon",
+        },
+        {
+            label: "LinkedIn",
+            href: "https://linkedin.com",
+            src: "/images/icons/linkedinIcon.png",
+            alt: "LinkedIn Icon",
+        },
+        {
+            label: "Facebook",
+            href: "https://facebook.com",
+            src: "/images/icons/fbIcon.png",
+            alt: "Facebook Icon",
+        },
+        {
+            label: "TikTok",
+            href: "https://tiktok.com",
+            src: "/images/icons/ttIcon.png",
+            alt: "TikTok Icon",
+        },
+    ];
     // ❗ Yol kontrolü: auth sayfalarında footer'ı gizle
     const pathname = usePathname() || '/';
     const hideFooter = /^\/(tr|en)\/auth(?:\/|$)/.test(pathname);
@@ -18,33 +45,8 @@ export default function Footer() {
             <div className="container mx-auto py-12">
 
                 {/* Abone ol bloğu */}
-                <section className="container-inline relative pt-24 pb-10 text-center">
-                    <h2 className="font-heading text-3xl md:text-4xl text-[color:var(--bg)]">
-                        Abone Ol
-                    </h2>
-                    <p className="mt-3 text-[color:var(--bg)]/90">
-                        Sarmez e-bülten aboneliği ile
-                        <br/>
-                        en yeni lezzetlerimizi ilk duyan siz olun!
-                    </p>
-
-                    <form
-                        className="mx-auto mt-6 flex max-w-3xl items-center gap-3"
-                        onSubmit={(e) => e.preventDefault()}
-                    >
-                        <input
-                            type="email"
-                            required
-                            placeholder="E-Posta"
-                            className="flex-1 rounded-md bg-white/95 px-4 py-3 text-[color:var(--text)] placeholder:text-[color:var(--muted)] focus:outline-none"
-                        />
-                        <button
-                            className="rounded-md bg-[color:var(--olive-700)] px-5 py-3 text-white hover:bg-[color:var(--olive-600)] transition"
-                            type="submit"
-                        >
-                            Abone Ol
-                        </button>
-                    </form>
+                <section className="container-inline relative pt-0 pb-10 text-center">
+                    <SubscribeBar/>
                 </section>
 
                 {/* Üst bilgiler: logo + iletişim + adres + çalışma saatleri */}
@@ -66,16 +68,16 @@ export default function Footer() {
                         <div className="md:border-l md:border-white/25 md:pl-8">
                             <h3 className="font-heading text-xl mb-2">İletişim</h3>
                             <p className="text-sm opacity-90">
-                                Mail: <a className="underline" href="mailto:sarmez@info.com">sarmez@info.com</a>
+                                Mail: <a className="underline" href="mailto:info@sarmez.com">info@sarmez.com</a>
                             </p>
-                            <p className="text-sm opacity-90">Telefon: 0 850 352 35 35</p>
+                            <p className="text-sm opacity-90">Telefon: +90 536 706 33 00</p>
                         </div>
 
                         {/* Adres */}
                         <div className="md:border-l md:border-white/25 md:pl-8">
                             <h3 className="font-heading text-xl mb-2">Adres</h3>
                             <p className="text-sm opacity-90">
-                                10026. Sk. No:2, 35620
+                                10016. Sk. No:31, 35620
                                 <br/>
                                 Aosb/Çiğli/İzmir, Türkiye
                             </p>
@@ -85,7 +87,7 @@ export default function Footer() {
                         <div className="md:border-l md:border-white/25 md:pl-8">
                             <h3 className="font-heading text-xl mb-2">Çalışma Saatleri</h3>
                             <p className="text-sm opacity-90">Pazartesi-Cumartesi</p>
-                            <p className="text-sm opacity-90">9.00 - 18.00</p>
+                            <p className="text-sm opacity-90">09.00 - 18.00</p>
                         </div>
                     </div>
                 </section>
@@ -126,20 +128,21 @@ export default function Footer() {
                         <div>
                             <h4 className="font-heading text-xl mb-3">Bizi Takip Edin</h4>
                             <div className="grid grid-cols-4 gap-3 max-w-[180px]">
-                                {[
-                                    {label: 'IG', href: 'https://instagram.com'},
-                                    {label: 'IN', href: 'https://linkedin.com'},
-                                    {label: 'FB', href: 'https://facebook.com'},
-                                    {label: 'TT', href: 'https://tiktok.com'}
-                                ].map(s => (
+                                {socials.map((s) => (
                                     <Link
                                         key={s.label}
                                         href={s.href}
                                         aria-label={s.label}
-                                        className="flex h-9 w-9 items-center justify-center rounded-md bg-white/90 text-[color:var(--olive-700)] font-semibold hover:bg-white transition"
+                                        className="flex h-9 w-9 items-center justify-center rounded-md bg-white/90 hover:bg-white transition"
                                         target="_blank"
                                     >
-                                        {s.label}
+                                        <Image
+                                            src={s.src}
+                                            alt={s.alt}
+                                            width={20}
+                                            height={20}
+                                            className="h-5 w-5 object-contain"
+                                        />
                                     </Link>
                                 ))}
                             </div>
@@ -151,12 +154,16 @@ export default function Footer() {
                 <div className="bg-black/20">
                     <div
                         className="container-inline flex flex-col gap-3 py-4 text-sm md:flex-row md:items-center md:justify-between">
-                        <span className="opacity-90">© 2025 SarMez</span>
+                        <span className="opacity-90">© 2025 SarMez. Tüm hakları saklıdır.</span>
                         <div className="flex items-center gap-6 opacity-90">
                             <Link href="/tr/gizlilik" className="hover:underline">Gizlilik Politikası</Link>
                             <Link href="/tr/sartlar" className="hover:underline">Şartlar ve Koşullar</Link>
                         </div>
-                        <span className="opacity-90">Created by Furkan Yener</span>
+                        <span className="opacity-90">
+                            <Link href="https://www.furkanyener.dev" target="_blank" rel="noopener noreferrer">
+                            Created by Furkan Yener
+                            </Link>
+                        </span>
                     </div>
                 </div>
             </div>

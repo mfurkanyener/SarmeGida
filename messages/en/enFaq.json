@@ -1,0 +1,30 @@
+{
+  "faq": {
+    "hero": {
+      "title": "FREQUENTLY ASKED QUESTIONS",
+      "subtitle": "Everything you wonder about our products and process."
+    },
+    "items": [
+      {
+        "q": "Are your products halal?",
+        "a": "All our products comply with halal standards."
+      },
+      {
+        "q": "What is the shipping time?",
+        "a": "Orders are shipped within 1–3 business days."
+      },
+      {
+        "q": "What is your return policy?",
+        "a": "Unopened items can be returned within 14 days."
+      },
+      {
+        "q": "Do you accept bulk orders?",
+        "a": "Yes, please contact us for corporate/bulk orders."
+      },
+      {
+        "q": "How do you keep the cold chain?",
+        "a": "We use temperature-controlled packaging and fast dispatch."
+      }
+    ]
+  }
+}

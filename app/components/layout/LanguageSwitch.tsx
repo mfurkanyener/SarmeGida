@@ -117,7 +117,7 @@ export default function LanguageSwitch({ override }: { override?: Override }) {
         <button
             onClick={onClick}
             disabled={loading}
-            className="px-4 py-1 rounded-full border border-[color:var(--olive-700)] text-[color:var(--olive-700)] hover:bg-[color:var(--olive-700)] hover:text-white transition disabled:opacity-60"
+            className="px-6 py-2 rounded-sm bg-[color:var(--olive-700)] text-[#D5A864] font-semibold tracking-wide transition hover:bg-[color:var(--olive-600)]"
             aria-label={`Switch language to ${next.toUpperCase()}`}
         >
             {next.toUpperCase()}

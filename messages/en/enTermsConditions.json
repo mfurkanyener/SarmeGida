@@ -1,0 +1,32 @@
+{
+  "termConditions": {
+    "hero": {
+      "title": "Terms & Conditions",
+      "subtitle": "Last Updated: 2025-09-09"
+    },
+    "updatedLabel": "Last Updated:",
+    "sections": [
+      {
+        "heading": "1. General Use",
+        "paragraph": "By using this website, you agree to these terms. All texts, images and logos are owned by SarMez Gıda and may not be copied or used commercially without permission."
+      },
+      {
+        "heading": "2. Products & Services",
+        "paragraph": "Information is for promotional purposes only. Content, prices and availability may change without notice."
+      },
+      {
+        "heading": "3. Disclaimer",
+        "paragraph": "While we strive for accuracy, errors may occur. SarMez Gıda is not liable for damages arising from the use of this website."
+      },
+      {
+        "heading": "4. Intellectual Property",
+        "paragraph": "The “SarMez” brand and logo belong to SarMez Gıda. “Created by Furkan Yener” refers solely to the web development service; all brand assets and content remain the property of SarMez Gıda."
+      },
+      {
+        "heading": "5. Contact",
+        "paragraph": "For inquiries: "
+      }
+    ],
+    "contactEmail": "sarmezit@gmail.com"
+  }
+  }

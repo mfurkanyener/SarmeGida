@@ -1,0 +1,41 @@
+{
+  "privacy": {
+    "hero": {
+      "title": "Gizlilik Politikası",
+      "subtitle": "Bilgilerinizi nasıl topladığımız, kullandığımız ve koruduğumuz."
+    }
+  },
+  "updatedLabel": "Son Güncelleme:",
+  "intro": "SarMez Gıda olarak ziyaretçilerimizin mahremiyetine önem veriyoruz. Bu politika; hangi bilgileri topladığımızı, nasıl kullandığımızı ve haklarınızı açıklar.",
+  "sections": [
+    {
+      "heading": "1. Toplanan Bilgiler",
+      "list": [
+        "İletişim formları/bülten kayıtları üzerinden ad, soyad ve e-posta.",
+        "Teknik veriler (IP, tarayıcı türü, cihaz bilgileri) – yalnızca güvenlik ve analiz için."
+      ]
+    },
+    {
+      "heading": "2. Kullanım Amaçları",
+      "list": [
+        "Taleplerinizi yanıtlamak",
+        "Onayınızla bülten/duyuru göndermek",
+        "Site güvenliği ve deneyimi iyileştirmek"
+      ]
+    },
+    {
+      "heading": "3. Paylaşım",
+      "paragraph": "Kişisel verileriniz satılmaz. Yalnızca yasal zorunluluklar veya e-posta gönderim gibi hizmet sağlayıcılar ile paylaşılabilir."
+    },
+    {
+      "heading": "4. Çerezler",
+      "paragraph": "Sitemizde deneyimi geliştirmek için çerezler kullanılabilir. Tarayıcınızdan çerez tercihlerinizi yönetebilirsiniz."
+    },
+    {
+      "heading": "5. Haklarınız",
+      "paragraph": "Kişisel verilerinize erişme, düzeltme veya silinmesini talep etme, pazarlamaya itiraz etme haklarına sahipsiniz."
+    }
+  ],
+  "contactPrefix": "Talepleriniz için:",
+  "email": "sarmezit@gmail.com"
+}

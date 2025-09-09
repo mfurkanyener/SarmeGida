@@ -1,5 +1,5 @@
 // app/(public)/[locale]/lezzetlerimiz/page.tsx
-import {supabaseServerRead} from '@/lib/supabase/server';
+import { supabaseServerRead } from '@/lib/supabase/server';
 import HeaderShell from '@layout/HeaderShell';
 import GenericHero from '@/app/components/hero/GenericHero';
 import {getTranslations} from 'next-intl/server';
@@ -37,9 +37,6 @@ export default async function ProductsListPage({ params }: PageProps) {
                 <GenericHero title={t('title')} subtitle={t('subtitle')} />
             </HeaderShell>
         <main className="container-inline py-10" style={{ maxWidth: 'var(--container-max)' }}>
-
-
-            <h1 className="font-heading text-4xl text-[color:var(--olive-700)]">Lezzetlerimiz</h1>
 
             {error && (
                 <p className="mt-6 text-red-700">Hata: {error.message}</p>

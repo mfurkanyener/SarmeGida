@@ -1,0 +1,32 @@
+{
+  "termConditions": {
+    "hero": {
+      "title": "Şartlar ve Koşullar",
+      "subtitle": "Last Updated: 2025-09-09"
+    },
+  "updatedLabel": "Son Güncelleme:",
+  "sections": [
+    {
+      "heading": "1. Genel Kullanım",
+      "paragraph": "Bu siteyi kullanarak bu şartları kabul etmiş olursunuz. Sitedeki tüm metin, görsel ve logolar SarMez Gıda’ya aittir; izin alınmaksızın kopyalanamaz veya ticari amaçla kullanılamaz."
+    },
+    {
+      "heading": "2. Ürün ve Hizmetler",
+      "paragraph": "Sitedeki bilgiler tanıtım amaçlıdır. İçerikler, fiyatlar ve uygunluk önceden haber verilmeksizin değiştirilebilir."
+    },
+    {
+      "heading": "3. Sorumluluk Reddi",
+      "paragraph": "Doğruluk için çaba gösterilse de hatalar oluşabilir. Bu sitenin kullanımından doğabilecek zararlardan SarMez Gıda sorumlu tutulamaz."
+    },
+    {
+      "heading": "4. Fikri Mülkiyet",
+      "paragraph": "“SarMez” markası ve logosu SarMez Gıda’ya aittir. “Created by Furkan Yener” ifadesi yalnızca web geliştirme hizmetine atıftır; tüm marka varlıkları ve içerikler SarMez Gıda’nın mülkiyetidir."
+    },
+    {
+      "heading": "5. İletişim",
+      "paragraph": "Sorularınız için: "
+    }
+  ],
+  "contactEmail": "sarmezit@gmail.com"
+}
+  }

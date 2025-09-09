@@ -3,6 +3,8 @@ import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, setRequestLocale} from 'next-intl/server';
 import Footer from '@layout/Footer';
 import {LanguageSwitchProvider} from '@/app/components/i18n/LanguageSwitchContext';
+import ScrollTopButton from "@/app/components/ScrollTopButton";
+import WhatsAppButton from "@/app/components/layout/WhatsAppButton"
 
 export function generateStaticParams() {
     return [{locale: 'tr'}, {locale: 'en'}];
@@ -25,8 +27,11 @@ export default async function LocaleLayout({children, params}: AnyLayoutProps) {
         <NextIntlClientProvider locale={safe} messages={messages}>
             <LanguageSwitchProvider>
                 <main className="min-h-[60vh]">{children}</main>
+                <WhatsAppButton />
                 <Footer />
             </LanguageSwitchProvider>
+            <ScrollTopButton/>
         </NextIntlClientProvider>
+
     );
 }

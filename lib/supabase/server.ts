@@ -1,29 +1,32 @@
+// lib/supabase/server.ts
 import { cookies } from 'next/headers';
 import { createServerClient, type CookieOptions } from '@supabase/ssr';
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
-/** RSC / layout / page: sadece okuma, cookie yazmaz */
+/** RSC / layout / page: sadece okuma, cookie yazmaz ve refresh denemez */
 export async function supabaseServerRead() {
-    const cookieStore = await cookies(); // Next 15: Promise
+    const cookieStore = await cookies();
 
     return createServerClient(url, key, {
         cookies: {
             get(name: string) {
                 return cookieStore.get(name)?.value;
             },
-            set() {
-                /* RSC ortamında cookie yazılmaz (no-op) */
-            },
-            remove() {
-                /* RSC ortamında cookie silinmez (no-op) */
-            },
+            set() { /* no-op */ },
+            remove() { /* no-op */ },
+        },
+        // 👇 public read için auth kalıcılığını kapat
+        auth: {
+            persistSession: false,
+            autoRefreshToken: false,
+            detectSessionInUrl: false,
         },
     });
 }
 
-/** Server Action / Route Handler: cookie yazabilir */
+/** Server Action / Route Handler: cookie yazabilir (admin için gerekli) */
 export async function supabaseServerAction() {
     const cookieStore = await cookies();
 
@@ -33,15 +36,19 @@ export async function supabaseServerAction() {
                 return cookieStore.get(name)?.value;
             },
             set(name: string, value: string, options?: CookieOptions) {
-                (cookieStore as unknown as {
-                    set: (n: string, v: string, o?: CookieOptions) => void;
-                }).set(name, value, options);
+                (cookieStore as unknown as { set: (n: string, v: string, o?: CookieOptions) => void; })
+                    .set(name, value, options);
             },
             remove(name: string, options?: CookieOptions) {
-                (cookieStore as unknown as {
-                    set: (n: string, v: string, o?: CookieOptions) => void;
-                }).set(name, '', { ...(options ?? {}), maxAge: 0 });
+                (cookieStore as unknown as { set: (n: string, v: string, o?: CookieOptions) => void; })
+                    .set(name, '', { ...(options ?? {}), maxAge: 0 });
             },
+        },
+        // Admin/Action tarafında session kalabilir (varsayılan)
+        auth: {
+            persistSession: true,
+            autoRefreshToken: true,
+            detectSessionInUrl: true,
         },
     });
 }

@@ -18,7 +18,7 @@ export default function HeaderShell({height = 520, variant = 'pattern', classNam
                 variant === 'pattern' ? 'bg-[url("/images/common/wawes.svg")] bg-no-repeat bg-cover bg-top' : 'bg-[var(--bg)]',
                 className
             )}
-            style={{ minHeight: height }}
+            style={{minHeight: height}}
         >
             {/* üst navigasyon */}
             <div className="container-inline pt-6">

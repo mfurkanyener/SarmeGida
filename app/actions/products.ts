@@ -21,6 +21,7 @@ export type NewProductInput = {
 };
 
 async function uploadToStorage(file: File): Promise<string> {
+
     const supabase = await supabaseServerAction();
     const path = `products/${Date.now()}-${file.name}`;
     const { data, error } = await supabase.storage
@@ -28,6 +29,7 @@ async function uploadToStorage(file: File): Promise<string> {
         .upload(path, file, { upsert: true });
     if (error) throw error;
     const pub = supabase.storage.from('media').getPublicUrl(data.path);
+
     return pub.data.publicUrl;
 }
 

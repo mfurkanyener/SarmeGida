@@ -1,6 +1,6 @@
 'use client';
-
-import {FormEvent, useState} from 'react';
+import { FormEvent, useState } from 'react';
+import { subscribe } from '@/app/actions/subscribe';
 
 export default function SubscribeBar() {
     const [email, setEmail] = useState('');
@@ -8,69 +8,50 @@ export default function SubscribeBar() {
 
     async function onSubmit(e: FormEvent) {
         e.preventDefault();
-        if (!email) return;
+        const value = email.trim();
+        if (!value) return;
         setState('loading');
 
-        try {
-            // Hızlı demo için: /api/subscribe endpoint’ine POST at
-            const res = await fetch('/api/subscribe', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ email })
-            });
-
-            if (res.ok) {
-                setState('ok');
-                setEmail('');
-            } else {
-                setState('err');
-            }
-        } catch {
+        const res = await subscribe(value);
+        if (res.ok) {
+            setEmail('');
+            setState('ok');
+        } else {
+            console.error('subscribe action error:', res.error);
             setState('err');
         }
     }
 
     return (
-        <section className="mt-20 bg-[var(--card-bg)]/60">
-            <div className="container mx-auto px-6 py-12">
-                <h3 className="mb-2 text-center text-xl font-semibold text-[var(--text)]">
-                    Abone Ol
-                </h3>
-                <p className="mb-6 text-center text-sm text-[var(--muted)]">
-                    En yeni lezzetlerimiz ve tariflerimizden ilk sen haberdar ol.
+        <section className="mt-20">
+            <div className="container-inline relative pt-24 pb-10 text-center">
+                <h2 className="font-heading text-3xl md:text-4xl text-[color:var(--bg)]">Abone Ol</h2>
+                <p className="mt-3 text-[color:var(--bg)]/90">
+                    Sarmez e-bülten aboneliği ile
+                    <br />
+                    en yeni lezzetlerimizi ilk duyan siz olun!
                 </p>
 
-                <form
-                    onSubmit={onSubmit}
-                    className="mx-auto flex w-full max-w-xl items-center gap-3"
-                >
+                <form onSubmit={onSubmit} className="mx-auto mt-6 flex max-w-3xl items-center gap-3">
                     <input
                         type="email"
                         required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="E-posta adresiniz"
-                        className="h-11 flex-1 rounded-md border border-black/10 bg-white px-3 text-sm outline-none focus:ring-2 focus:ring-[var(--olive-700)]"
+                        className="flex-1 rounded-md bg-white/95 px-4 py-3 text-[color:var(--text)] placeholder:text-[color:var(--muted)] focus:outline-none"
                     />
                     <button
                         type="submit"
-                        disabled={state==='loading'}
-                        className="h-11 whitespace-nowrap rounded-md bg-[var(--olive-700)] px-5 text-sm text-white transition hover:bg-[var(--olive-600)] disabled:opacity-60"
+                        disabled={state === 'loading'}
+                        className="rounded-md bg-[color:var(--olive-700)] px-5 py-3 text-white hover:bg-[color:var(--olive-600)] transition"
                     >
-                        {state==='loading' ? 'Gönderiliyor…' : 'Abone Ol'}
+                        {state === 'loading' ? 'Gönderiliyor…' : 'Abone Ol'}
                     </button>
                 </form>
 
-                {state==='ok' && (
-                    <p className="mt-3 text-center text-sm text-green-700">
-                        Teşekkürler! Aboneliğin alındı.
-                    </p>
-                )}
-                {state==='err' && (
-                    <p className="mt-3 text-center text-sm text-red-700">
-                        Bir hata oluştu. Lütfen tekrar dene.
-                    </p>
-                )}
+                {state === 'ok' && <p className="mt-3 text-center text-sm text-green-700">Teşekkürler! Aboneliğin alındı.</p>}
+                {state === 'err' && <p className="mt-3 text-center text-sm text-red-700">Bir hata oluştu. Lütfen tekrar dene.</p>}
             </div>
         </section>
     );

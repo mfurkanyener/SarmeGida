@@ -15,7 +15,7 @@ type Props = {
 export default function ContactInfo({
                                         phone = '+90 535 572 76 39',
                                         email = 'info@sarmez.com',
-                                        address = '10016. Sk. No:2, 35620 Aosb/Çiğli/İzmir, Türkiye',
+                                        address = '10016. Sk. No:31, 35620 Aosb/Çiğli/İzmir, Türkiye',
                                         hours = 'Pazartesi–Cumartesi 9.00 – 18.00',
                                         mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1989.877...'
                                     }: Props) {
@@ -66,17 +66,17 @@ export default function ContactInfo({
 
                             <div className="flex items-center gap-6">
                                 {/* Eğer elinizde PNG/SVG ikonlar varsa /public altına koyup bu Image’ları kullanın */}
-                                <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
-                                    <Image src="/images/common/instagram.png" alt="Instagram" width={40} height={40} />
+                                <a href="https://www.instagram.com/sarmezworkshop/" target="_blank" rel="noreferrer" aria-label="Instagram">
+                                    <Image src="/images/icons/igIcon.png" alt="Instagram" width={40} height={40} />
                                 </a>
                                 <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-                                    <Image src="/images/common/linkedin.png" alt="LinkedIn" width={40} height={40} />
+                                    <Image src="/images/icons/linkedinIcon.png" alt="LinkedIn" width={40} height={40} />
                                 </a>
                                 <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
-                                    <Image src="/images/common/facebook.png" alt="Facebook" width={40} height={40} />
+                                    <Image src="/images/icons/fbIcon.png" alt="Facebook" width={40} height={40} />
                                 </a>
                                 <a href="https://tiktok.com" target="_blank" rel="noreferrer" aria-label="TikTok">
-                                    <Image src="/images/common/tiktok.png" alt="TikTok" width={40} height={40} />
+                                    <Image src="/images/icons/ttIcon.png" alt="TikTok" width={40} height={40} />
                                 </a>
                             </div>
                         </div>

@@ -1,14 +1,18 @@
 // app/components/Hero.tsx
 'use client';
 import Image from 'next/image';
-import {useTranslations} from 'next-intl';
+import Link from "next/link";
+import {useLocale, useTranslations} from 'next-intl';
 
 export default function Hero() {
     const t = useTranslations('hero');
+    const locale = useLocale();
+
 
     return (
         <section className="hero-section">
-            <div className="container-inline grid grid-cols-1 mt-10 lg:grid-cols-2 items-start gap-10">                <div className="max-w-xl relative">  {/* ← relative eklendi */}
+            <div className="container-inline grid grid-cols-1 mt-10 lg:grid-cols-2 items-start gap-10">
+                <div className="max-w-xl relative">  {/* ← relative eklendi */}
                 <h1 className="m-0 font-heading text-4xl md:text-6xl leading-tight text-[color:var(--olive-700)]">
                     {t('title')}
                 </h1>
@@ -16,10 +20,12 @@ export default function Hero() {
                     {t('subtitle')}
                 </p>
 
-                <button className="mt-6 inline-flex items-center rounded-full px-5 py-3 text-sm font-medium
-                     bg-[color:var(--olive-700)] text-white hover:bg-[color:var(--olive-600)] transition">
-                    {t('cta')}
-                </button>
+                    <Link
+                        href={`/${locale}/lezzet-recetesi`}
+                        className="mt-6 inline-flex items-center justify-center rounded-full px-8 py-3 text-lg font-medium bg-[#B8875B] text-white hover:bg-[#A6784E] transition"
+                    >
+                        {t('cta')}
+                    </Link>
 
                 {/* Post-it: sol padding çizgisine hizalı (80px), butondan 16px aşağı */}
                 <Image
