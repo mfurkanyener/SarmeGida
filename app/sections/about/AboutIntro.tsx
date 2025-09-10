@@ -10,7 +10,7 @@ export default function AboutIntro() {
     const locale = useLocale();
 
     return (
-        <section className="section-y">
+        <section className="container-inline">
                 {/* Başlık + alt metin */}
                 <div className="text-center max-w-4xl mx-auto">
                     <h2 className="font-heading text-3xl md:text-4xl font-bold text-[color:var(--olive-700)] mb-4">

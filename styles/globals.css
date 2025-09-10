@@ -102,6 +102,16 @@
     }
   }
 
+  @layer utilities {
+    .container-inline-center {
+      width: 100%;
+      padding-inline: clamp(var(--gutter-min), 5vw, var(--gutter));
+      margin-inline: auto; /* ← merkezle */
+    }
+    @media (min-width: 768px) { .container-inline-center{ padding-inline: var(--gutter-md);} }
+    @media (min-width: 1280px){ .container-inline-center{ padding-inline: var(--gutter-xl);} }
+  }
+
   /* Düşey section boşluğu */
   .section-y {
    padding-bottom: clamp(32px, 6vw, 64px);

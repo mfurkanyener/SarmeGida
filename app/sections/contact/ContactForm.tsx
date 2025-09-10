@@ -4,6 +4,8 @@
 import { useState, FormEvent } from 'react';
 import * as React from 'react';
 import clsx from 'clsx';
+import emailjs from "emailjs-com";
+
 
 type Props = {
     className?: string;
@@ -26,25 +28,27 @@ export default function ContactForm({ className }: Props) {
         setErr(null);
 
         try {
-            const res = await fetch('/api/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, email, phone, message }),
-            });
+            const res = await emailjs.send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+                {
+                    from_name: name,
+                    from_email: email,
+                    phone,
+                    message,
+                },
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+            );
 
-            if (!res.ok) {
-                const info = await res.json().catch(() => ({}));
-                throw new Error(info?.error || 'Gönderim başarısız.');
-            }
-
+            console.log("EmailJS response:", res);
             setOk(true);
-            setName('');
-            setEmail('');
-            setPhone('');
-            setMessage('');
-        } catch (e: unknown) {
-            const msg = e instanceof Error ? e.message : 'Beklenmeyen bir hata oluştu.';
-            setErr(msg);
+            setName("");
+            setEmail("");
+            setPhone("");
+            setMessage("");
+        } catch (error) {
+            console.error(error);
+            setErr("Gönderim başarısız, lütfen tekrar deneyin.");
             setOk(false);
         } finally {
             setSubmitting(false);
@@ -125,16 +129,23 @@ export default function ContactForm({ className }: Props) {
                     </p>
 
                     {/* Hata / Başarı */}
-                    {err && (
-                        <p className="text-sm text-red-700">
-                            {err}
-                        </p>
-                    )}
-                    {ok && !err && (
-                        <p className="text-sm text-green-700">
-                            Teşekkürler! Mesajınız başarıyla iletildi.
-                        </p>
-                    )}
+                    <div
+                        className={clsx(
+                            "fixed bottom-6 right-6 z-50 transition-transform duration-300",
+                            ok || err ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0 pointer-events-none"
+                        )}
+                    >
+                        <div
+                            className={clsx(
+                                "px-5 py-3 rounded-lg shadow-lg text-white",
+                                ok && "bg-green-600",
+                                err && "bg-red-600"
+                            )}
+                        >
+                            {ok && "✅ Teşekkürler! Mesajınız başarıyla iletildi."}
+                            {err && `❌ ${err}`}
+                        </div>
+                    </div>
 
                     {/* Gönder */}
                     <button

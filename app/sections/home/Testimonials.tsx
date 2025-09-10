@@ -51,7 +51,7 @@ export default function Testimonials() {
             <div className="mx-auto max-w-5xl px-4 text-center">
                 <h2
                     id="testimonials-heading"
-                    className="font-heading text-[clamp(28px,4vw,48px)] text-[color:var(--olive-700)]"
+                    className="font-heading text-3xl md:text-4xl font-bold text-[color:var(--olive-700)] mb-4"
                 >
                     {t('title')}
                 </h2>

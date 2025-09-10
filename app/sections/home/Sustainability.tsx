@@ -27,7 +27,8 @@ export default function Sustainability() {
                 {/* Başlıklar */}
                 <h2
                     id="sustainability-heading"
-                    className="text-center font-heading text-3xl md:text-5xl text-[color:var(--olive-700)]"
+                    className="text-center font-heading text-3xl md:text-4xl font-bold text-[color:var(--olive-700)] mb-4"
+
                 >
                     {t('title')}
                 </h2>

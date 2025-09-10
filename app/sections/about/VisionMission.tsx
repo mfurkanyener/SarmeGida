@@ -11,7 +11,7 @@ export default function VisionMission() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
                     {/* Vizyon */}
                     <div>
-                        <h2 className="font-heading text-3xl md:text-4xl text-[color:var(--olive-700)] mb-4">
+                        <h2 className="font-heading text-3xl md:text-4xl font-bold text-[color:var(--olive-700)] mb-4">
                             {t('vision.title')}
                         </h2>
                         <p className="text-[color:var(--muted)] leading-relaxed">
@@ -21,7 +21,7 @@ export default function VisionMission() {
 
                     {/* Misyon */}
                     <div>
-                        <h2 className="font-heading text-3xl md:text-4xl text-[color:var(--olive-700)] mb-4">
+                        <h2 className="font-heading text-3xl md:text-4xl font-bold text-[color:var(--olive-700)] mb-4">
                             {t('mission.title')}
                         </h2>
                         <p className="text-[color:var(--muted)] leading-relaxed">

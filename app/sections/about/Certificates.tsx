@@ -31,7 +31,8 @@ export default function Certificates() {
 
     return (
         <section className="container-inline py-16 text-center">
-            <h2 className="text-2xl font-semibold mb-6">{t('title')}</h2>
+            <h2 className="text-center font-heading text-3xl md:text-4xl font-bold text-[color:var(--olive-700)] mb-4"
+            >{t('title')}</h2>
             <p className="max-w-2xl mx-auto text-gray-600 mb-12">{t('description')}</p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -13,7 +13,7 @@ export default function Flavors() {
                 {/* Başlık */}
                 <h2
                     id="flavors-heading"
-                    className="text-center font-heading text-3xl md:text-5xl tracking-wide text-[color:var(--olive-700)]"
+                    className="text-center font-heading text-3xl md:text-4xl font-bold text-[color:var(--olive-700)] mb-4"
                 >
                     {t('title')}
                 </h2>
